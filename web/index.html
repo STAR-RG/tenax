@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+                                   initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="buttons.css">    
+    <title>???</title>
+
+    <!-- load jquery and datatables -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+    
+  </head>
+
+  <script src="table.js"></script>
+  
+  <body>
+    
+    <button id="btn-show-all-children" type="button">Expand All</button>
+    <button id="btn-hide-all-children" type="button">Collapse All</button>
+    <hr>
+    <table id="example" class="display" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+    	    <th></th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+		    <th></th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Salary</th>
+        </tr>
+      </tfoot>
+    </table>
+        
+  </body>
+  
+</html>

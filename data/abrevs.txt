@@ -1,0 +1,125 @@
+Applied Soft Comput.,Applied Soft Computing
+Expert Systems Appl.,Expert Systems with Applications
+Future Generation CS,Future Generation Computer Systems
+Engineering Appl. of AI,Engineering Applications of AI
+Data Min. Knowl. Discov.,Data Mining and Knowledge Discovery
+Inf. Retr. Journal.,Information Retrieval Journal
+Knowledge-Based Syst.,Knowledge-Based Systems
+ACM TKDD,ACM Trans. on Knowledge Discovery from Data (TKDD)
+Inf. Sci.,Information Sciences
+IEEE TKDE,IEEE Trans. on Knowledge and Data Engineering (TKDE)
+Data & Knowl. Eng.,Data & Knowledge Engineering
+Inf. Systems,Information Systems
+J. Parallel Distrib. Comput.,Journal of Parallel and Distributed Computing
+ACM TOPC,ACM Transactions on Parallel Computing (TOPC)
+IEEE TPDS,IEEE Trans. on Parallel and Distributed Systems
+Int. J. Parallel Programming,International Journal of Parallel Programming
+ACM Comput. Surveys,ACM Computing Surveys
+J. Grid Comput.,Journal of Grid Computing
+J. Network Computer App.,Journal of Network and Computer Applications
+Computer Networks,Computer networks
+IEEE Comm. Magazine,IEEE Communications Magazine
+IEEE BIBM,BIBM
+MoDELS,MODELS
+ACM BCB,BCB
+ACM TOCT,ACM Transactions on Computation Theory (TOCT)
+ACM TOIS,ACM Trans. on Information Systems (TOIS)
+ACM TOIT,ACM Transactions on Internet Technology (TOIT)
+ACM Trans. Privacy & Security,ACM Trans. on Privacy and Security
+ACM Trans. Sensor Networks,ACM Trans. on Sensor Networks
+ACM TWEB,ACM Transactions on the Web (TWEB)
+Briefings in Bioinfo.,Briefings in Bioinformatics
+CloudCom,IEEE Trans. on Cloud Computing
+Communications ACM,Communications of the ACM
+Comp. Science Educ.,Computer Science Education
+Computer Comm.,Computer Communications
+Discrete Applied Math.,Discrete Applied Mathematics
+IEEE/ACM Trans. Networking,IEEE/ACM Trans. on Networking
+IEEE Robotics & Automation Mag.,IEEE Robotics & Automation Magazine
+IEEE Trans. Cloud Comp.,IEEE Trans. on Cloud Computing
+IEEE Trans. Dependable Sec. Comput.,IEEE Trans. Dependable and Secure Computing
+IEEE Trans. Inf. Forensics Sec.,IEEE Trans. Information Forensics and Security
+IEEE Trans. Mobile Comput.,IEEE Trans. on Mobile Computing
+IEEE Trans. Net. Service  Mgmt.,IEEE Trans. Network and Service Mgmt.
+IEEE Trans. Neural Netw. Learn. Syst.,IEEE Trans. Neural Networks Learning Syst.
+IEEE Trans. Robotics,IEEE Trans. on Robotics
+IEEE Trans. Wireless Comm.,IEEE Trans. on Wireless Communications
+IEEE Wireless Commun.,IEEE Wireless Communications
+Inf. Fusion,Information Fusion
+INFORMS J Compt,INFORMS Journal on Computing (INFORMS J Comp)
+Inf. Process. Mgmt.,Information Processing & Management
+Int. J. Approx. Reasoning,Int. J. of Approximate Reasoning
+J. Comb. Theory Series A,Journal of Combinatorial Theory Series A
+J. Comb. Theory Series B,Journal of Combinatorial Theory Series B
+J. Computational Biology,Journal of Computational Biology
+J. Intelligent & Robotic Syst.,J. Intelligent & Robotic Systems
+J. Log. Comput.,Journal of Logic and Computation
+JMLR,Journal of Machine Learning Research
+J. of Graph Theory,Journal of Graph Theory
+J. Selected Areas Comm.,Journal on Selected Areas in Communications
+Neural Computing Applications,Neural Computing and Applications
+ Opt Letters,Optimization Letters (Opt Letters)
+Random Struct. Algorithms,Random Structures & Algorithms
+Robotics & Autonomous Syst.,Robotics & Autonomous Systems
+Sci. of Comput. Program.,Science of Computer Programming (SCP)
+SIAM J. Discrete Mathematics,SIAM Journal on Discrete Mathematics
+Theor. Comput. Sci.,Theoretical Computer Science
+TPLP,Theory and Practice of Logic Programming
+Trans. GIS,Transactions in GIS
+WebSci,WebSci (2018)
+SODA,SODA (2015)
+SIGMOD,SIGMOD (2015)
+ICWSM,ICWSM (2018)
+ICPR,ICPR (2016)
+BigData,IEEE BigData
+CSF,Computer Security Foundations (CSF)
+ACM TACO,ACM Trans. on Arch. and Code Optimization (TACO)
+ACM TOCE,ACM Trans. on Computing Education (ACM TOCE)
+Annals OR,Annals of Operations Research (Annals OR)
+Behaviour & IT,Behaviour & Information Technology (Behaviour & IT)
+Comp Opt Appl,Comput. Optimization and Applications (Comp Opt Appl)
+Computers & OR,Computers & Operations Research (Computers & OR)
+Concurrency and Computation,Concurrency and Computation: Practice and Experience
+CVIU,Computer Vision and Image Understanding (CVIU)
+EJOR,European Journal of Operational Research (EJOR)
+EMSE,Empirical Software Engineering (EMSE)
+IEEE/ACM Trans. on Networking,\IEEE/ACM Trans. on Networking \
+IEEE TCSVT,IEEE Trans. Circuits Systems Video Technology (IEEE TCSVT)
+IEEE THMS,IEEE Trans. on Human-Machine Systems (IEEE THMS)
+IEEE TIP,IEEE Trans. Image Processing (IEEE TIP)
+IEEE ToE,IEEE Trans. Education (IEEE ToE)
+IEEE TPAMI,IEEE Trans. Pattern Analysis Mach. Intelligence (IEEE TPAMI)
+IJCV,International Journal of Computer Vision (IJCV)
+IMAVIS,Image and Vision Computing (IMAVIS)
+Int. J. HCI,Int. Journal of Human-Computer Interaction (Int. J. HCI)
+Int. J. HC Studies,Int. Journal of Human-Computer Studies (Int. J. HC Studies)
+IST,Information and Software Technology (IST)
+ITOR,Int. Transactions in Operational Research (ITOR)
+J Comb Opt,Journal of Combinatorial Optimization (J Comb Opt)
+J Global Opt,Journal of Global Optimization (J Global Opt)
+J Heuristics,Journal of Heuristics (J Heuristics)
+JORS,Journal of The Operational Research Society (JORS)
+JSEP,Journal of Software Evolution and Process (JSEP)
+JSS,Journal of Systems and Software (JSS)
+JVCI,J. Visual Communication and Image Representation (JVCI)
+Math OR,Mathematics of Operations Research (Math OR)
+Math Program,Mathematical Programming (Math Program)
+MVAP,Machine Vision and Applications (MVAP)
+Num Linear Alg,Num. Linear Algebra With Applications (Num Linear Alg)
+PR,Pattern Recognition (PR)
+PRL,Pattern Recognition Letters (PRL)
+REJ,Requirements Engineering Journal (REJ)
+SCP,Science of Computer Programming (SCP)
+SIAM J Opt,SIAM Journal on Optimization (SIAM J Opt)
+SoSyM,Software and Systems Modeling (SoSyM)
+SPE,Software Practice and Experience (SPE)
+SQJ,Software Quality Journal (SQJ)
+Supercomputing,The Journal of Supercomputing
+TACO,ACM Trans. on Arch. and Code Optimization (TACO)
+TOPLAS,ACM Trans. on Progr. Lang. and Systems (ACM TOPLAS)
+TOSEM,ACM Trans. Soft. Eng. and Methodology (ACM TOSEM)
+TSE,IEEE Trans. Soft. Engineering (IEEE TSE)
+Opt Letters,Optimization Letters (Opt Letters)
+J Opt Th Appl,J. of Optimization Theory and Applications (J Opt Th Appl)
+Opt Methods & Sw,Optimization Methods & Software (Opt Methods & Sw)
+Inf. Sciences,Information Sciences
