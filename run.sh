@@ -29,7 +29,6 @@ plot() {
     (cd R
      Rscript --vanilla genhistograms.R "$TMPFILE" "$LEVEL" "$OUTFILENAME" >/dev/null 2>&1
     )
-
 }
 
 plot "PQ-1A" pq1a
@@ -43,3 +42,7 @@ plot "\-\-" sembolsa
 (cd R
  ./gengrid.R
 )
+
+## generating json
+echo "[TENAX] generating json for website"
+python csvtojson.py > web/data.json

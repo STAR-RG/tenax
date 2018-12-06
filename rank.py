@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isfile, join
 import csv
 import glob
+import unidecode
 
 ## public options
 option_anonymize = False
@@ -95,7 +96,6 @@ def main():
         profNameFile="{0}/{1}.csv".format(PROF_DATA_DIR, profname).replace(' ', '-')
         if not isfile(profNameFile):
             raise Exception('Could not find file for {0}'.format(profNameFile))
-        # iterate through researcher's publications
         score = 0
         numA = 0
         numB = 0
@@ -134,8 +134,14 @@ def main():
 
         ## look up the author institution name
         instName = ""
+
+        # unidecode.unidecode removes accents, just in case
+        profname2 = unidecode.unidecode(profname)
+        
         if profname in affiliation_dict:
             instName = affiliation_dict[profname]
+        elif profname2 in affiliation_dict:
+            instName = affiliation_dict[profname2]
         else: # different ways to name the author :(
             instName = affiliation_dict[author_synonyms[profname]]
 

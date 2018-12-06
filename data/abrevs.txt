@@ -80,6 +80,7 @@ Behaviour & IT,Behaviour & Information Technology (Behaviour & IT)
 Comp Opt Appl,Comput. Optimization and Applications (Comp Opt Appl)
 Computers & OR,Computers & Operations Research (Computers & OR)
 Concurrency and Computation,Concurrency and Computation: Practice and Experience
+Concurr. & Computation,Concurrency and Computation: Practice and Experience
 CVIU,Computer Vision and Image Understanding (CVIU)
 EJOR,European Journal of Operational Research (EJOR)
 EMSE,Empirical Software Engineering (EMSE)
@@ -123,3 +124,4 @@ Opt Letters,Optimization Letters (Opt Letters)
 J Opt Th Appl,J. of Optimization Theory and Applications (J Opt Th Appl)
 Opt Methods & Sw,Optimization Methods & Software (Opt Methods & Sw)
 Inf. Sciences,Information Sciences
+Transp. Science,Transportation Science

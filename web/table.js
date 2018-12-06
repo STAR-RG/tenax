@@ -31,7 +31,8 @@ function format ( d ) {
 $(document).ready(function() {
     var table = $('#example').DataTable({
         //'ajax': 'https://api.myjson.com/bins/16lp6',
-        'ajax': 'fakeauthorlist.json',
+        //'ajax': 'fakeauthorlist.json',
+        'ajax': 'data.json',
         'columns': [
             {
                 'className':      'details-control',
@@ -40,10 +41,12 @@ $(document).ready(function() {
                 'defaultContent': ''
             },
             { 'data': 'name' },
-            { 'data': 'num-csindexbr-papers' },
-            { 'data': 'num-csindexbr-confs' },
-            { 'data': 'num-csindexbr-journals' },
+            { 'data': 'institution' },
+            { 'data': 'bolsa-cnpq' },
             { 'data': 'num-top-papers' },
+            { 'data': 'num-csindexbr-papers' },
+            { 'data': 'num-csindexbr-journals' },
+            { 'data': 'num-csindexbr-confs' },
             { 'data': 'csindexbr-score' }
         ],
         'order': [[1, 'asc']]
