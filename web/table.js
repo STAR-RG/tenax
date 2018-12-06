@@ -1,25 +1,37 @@
 /* Formatting function for row details - modify as you need */
 function format ( d ) {
+
+    papers = 
+    '<tr>'+
+    '<td><span style="font-weight:bold">Venue</span></td>'+
+    '<td><span style="font-weight:bold">Year</span></td>'+
+    '<td><span style="font-weight:bold">Title</span></td>'+
+    '<td><span style="font-weight:bold">Authors</span></td>'+
+    '<td><span style="font-weight:bold">Citations</span></td>'+
+    '</tr>';
+
+    for (var i = 0; i < d.papers.length; i++){
+        var paper = d.papers[i];
+        papers +=
+          '<tr>'+
+          '<td>'+paper.venue+'</td>'+
+          '<td>'+paper.year+'</td>'+
+          '<td>'+paper.title+'</td>'+
+          '<td>'+paper.authors+'</td>'+
+          '<td>'+paper.citations+'</td>'+
+          '</tr>';
+    }
+
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-        '<tr>'+
-            '<td>Full name:</td>'+
-            '<td>'+d.name+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Extension number:</td>'+
-            '<td>'+d.extn+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Extra info:</td>'+
-            '<td>And any further details here (images etc)...</td>'+
-        '</tr>'+
-    '</table>';
+            papers+
+           '</table>';
 }
 
 $(document).ready(function() {
     var table = $('#example').DataTable({
-        'ajax': 'https://api.myjson.com/bins/16lp6',
+        //'ajax': 'https://api.myjson.com/bins/16lp6',
+        'ajax': 'fakeauthorlist.json',
         'columns': [
             {
                 'className':      'details-control',
@@ -28,9 +40,11 @@ $(document).ready(function() {
                 'defaultContent': ''
             },
             { 'data': 'name' },
-            { 'data': 'position' },
-            { 'data': 'office' },
-            { 'data': 'salary' }
+            { 'data': 'num-csindexbr-papers' },
+            { 'data': 'num-csindexbr-confs' },
+            { 'data': 'num-csindexbr-journals' },
+            { 'data': 'num-top-papers' },
+            { 'data': 'csindexbr-score' }
         ],
         'order': [[1, 'asc']]
     } );
