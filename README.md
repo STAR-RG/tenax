@@ -1,4 +1,4 @@
 # tenax
-Visualization tool to help people that need to evaluate production of Brazilian researchers. 
+Visualization tool to help people evaluate production of Brazilian researchers. 
 
-Often, decision makers need to judge a high volume of proposals. It is important to identify merit in those circumstances. tenax can help on that by (1) using as data source the database from csindexbr.org, which focuses on high-impact production and by (2) providing a simple and intuitive visualization aid.
+The primary goal of tenax is to help decision makers at research committees to identify researchers that produce high-impact work. It does that by (1) using the database from csindexbr.org, which focuses on high-impact production and (2) presenting results with an intuitive user interface.
