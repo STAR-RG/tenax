@@ -22,10 +22,11 @@ def main():
                  "institution": inst.strip(),
                  "bolsa-cnpq": cnpq.strip(),
                  "num-csindexbr-papers": int(numA)+int(numB)+int(numC),
-                 "num-csindexbr-confs": "pending",
-                 "num-csindexbr-journals": "pending",
+                 "num-csindexbr-confs": "todo",
+                 "num-csindexbr-journals": "todo",
                  "num-top-papers": int(numA),
                  "csindexbr-score": float(score),
+                 "csrankings-score": "todo",
                  "papers": []
                 }
                 )    

@@ -45,4 +45,4 @@ plot "\-\-" sembolsa
 
 ## generating json
 echo "[TENAX] generating json for website"
-python csvtojson.py > web/data.json
+python csvtojson.py > docs/data.json
