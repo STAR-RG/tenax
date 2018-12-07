@@ -17,13 +17,15 @@ def main():
             numB = row[4]
             numC = row[5]
             inst = row[6]
+            numConferencePapers = row[7]
+            numJournalPapers = row[8]
             data.append(
                 {"name": name.strip(),
                  "institution": inst.strip(),
                  "bolsa-cnpq": cnpq.strip(),
                  "num-csindexbr-papers": int(numA)+int(numB)+int(numC),
-                 "num-csindexbr-confs": "todo",
-                 "num-csindexbr-journals": "todo",
+                 "num-csindexbr-confs": numConferencePapers,
+                 "num-csindexbr-journals": numJournalPapers,
                  "num-top-papers": int(numA),
                  "csindexbr-score": float(score),
                  "csrankings-score": "todo",

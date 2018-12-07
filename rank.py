@@ -100,6 +100,8 @@ def main():
         numA = 0
         numB = 0
         numC = 0
+        numConference = 0
+        numJournal = 0
         if debug_author and debug_author_name == profname: print('DEBUG: ' + profname)
         with open(profNameFile) as csv_file:                                                                        
             csv_reader = csv.reader(csv_file, delimiter=',')
@@ -108,6 +110,7 @@ def main():
                 ## variables for important columns to facilitate access
                 ## first columns: year, venue, title, authors, ...
                 venue = row[1]
+                journalOrConference = row[6].strip() # J for journal and C for conference
 
                 if venue in replacements:
                     venue = replacements[venue]
@@ -126,6 +129,13 @@ def main():
                         raise Exception("Could not find venue! >{0}< Update replacements".format(venue))
                     else:
                         print("Could not find venue! Update replacements>{0}".format(venue))
+                
+                if journalOrConference == 'C':
+                    numConference += 1
+                elif journalOrConference == 'J':
+                    numJournal += 1
+                else:
+                    raise Exception("Bad kind. Please check >{0}<".format(journalOrConference))
 
 
         score = numA + 0.4*numB + 0.33*numC
@@ -153,7 +163,7 @@ def main():
         if profname in cnpq_pq_dict:
             pqlevel = cnpq_pq_dict[profname]
 
-        print("{0:.2f}, {1}, {2}, {3}, {4}, {5}, {6}".format(float(score), pqlevel, profname, numA, numB, numC, instName))
+        print("{0:.2f}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}".format(float(score), pqlevel, profname, numA, numB, numC, instName, numConference, numJournal))
 
 def processVenues(venues, rankNum, isJournal):
     for venue in venues:
