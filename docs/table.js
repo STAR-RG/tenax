@@ -50,7 +50,8 @@ $(document).ready(function() {
             { 'data': 'csindexbr-score' },
             { 'data': 'csrankings-score' }
         ],
-        'order': [[1, 'asc']]
+        'order': [[4, 'desc']],
+        'pageLength': 20
     } );
 
     // Add event listener for opening and closing details
