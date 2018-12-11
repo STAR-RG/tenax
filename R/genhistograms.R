@@ -15,7 +15,7 @@ dat = readLines(filename)
 dat <- as.numeric(dat)
 
 # Give the chart file a name.
-png(file = paste("../data/", outputfile, ".png", sep=""))
+png(file = paste("../docs/", outputfile, ".png", sep=""))
 
 # Create the histogram
 hist(dat, xlab = "csindexbr score", col = "yellow", border = "blue", main=title, breaks=10)
