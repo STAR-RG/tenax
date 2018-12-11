@@ -26,7 +26,9 @@ def main():
                  "num-csindexbr-papers": int(numA)+int(numB)+int(numC),
                  "num-csindexbr-confs": numConferencePapers,
                  "num-csindexbr-journals": numJournalPapers,
-                 "num-top-papers": int(numA),
+                 "num-tier-one": int(numA),
+                 "num-tier-two": int(numB),
+                 "num-tier-three": int(numC),
                  "csindexbr-score": float(score),
                  "papers": []
                 }
