@@ -47,8 +47,7 @@ $(document).ready(function() {
             { 'data': 'num-csindexbr-papers' },
             { 'data': 'num-csindexbr-journals' },
             { 'data': 'num-csindexbr-confs' },
-            { 'data': 'csindexbr-score' },
-            { 'data': 'csrankings-score' }
+            { 'data': 'csindexbr-score' }
         ],
         'order': [[4, 'desc']],
         'pageLength': 20

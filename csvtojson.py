@@ -28,7 +28,6 @@ def main():
                  "num-csindexbr-journals": numJournalPapers,
                  "num-top-papers": int(numA),
                  "csindexbr-score": float(score),
-                 "csrankings-score": "todo",
                  "papers": []
                 }
                 )    
