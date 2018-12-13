@@ -43,6 +43,7 @@ $(document).ready(function() {
             { 'data': 'name' },
             { 'data': 'institution' },
             { 'data': 'bolsa-cnpq' },
+            { 'data': 'area' },
             { 'data': 'num-tier-one' },
             { 'data': 'num-tier-two' },
             { 'data': 'num-tier-three' },
@@ -50,7 +51,7 @@ $(document).ready(function() {
             { 'data': 'num-csindexbr-journals' },
             { 'data': 'num-csindexbr-confs' }
         ],
-        'order': [[4, 'desc']],
+        'order': [[5, 'desc']],
         'pageLength': 20
     } );
 

@@ -23,7 +23,9 @@ profs="{0}/profs/all-authors.csv".format(DATA_DIR)
 journals_stats="{0}/*-out-stats-journals.csv".format(DATA_DIR)
 confs_stats="{0}/*-out-stats.csv".format(DATA_DIR)
 ## affiliation of researches
-affiliation="{0}/all-researchers.csv".format(DATA_DIR)
+#affiliation="{0}/all-researchers.csv".format(DATA_DIR)
+## area of researchers
+area="{0}/profs.csv".format(DATA_DIR)
 
 ## list of authors to deanonymize
 publicNamesFileName="data/publicnames.txt"
@@ -60,14 +62,18 @@ def main():
             longName = row[1]
             replacements.update({shortName: longName})    
 
-    # load affiliation data
+    # load affiliation and area data
     affiliation_dict={}
-    with open(affiliation) as csv_file:                                                                        
+    areas_dict={}
+    with open(area) as csv_file:                                                                        
         csv_reader = csv.reader(csv_file, delimiter=',')
         for row in csv_reader:
             authorName = row[0]
             instName = row[1]
+            areas = row[2]
             affiliation_dict.update({authorName: instName})
+            areas_dict.update({authorName: areas})
+
 
     # load CNPQ-PQ levels
     cnpq_pq_dict={} # name: level
@@ -148,12 +154,21 @@ def main():
         # unidecode.unidecode removes accents, just in case
         profname2 = unidecode.unidecode(profname)
         
+        ## finding insitution name
         if profname in affiliation_dict:
             instName = affiliation_dict[profname]
         elif profname2 in affiliation_dict:
             instName = affiliation_dict[profname2]
         else: # different ways to name the author :(
             instName = affiliation_dict[author_synonyms[profname]]
+
+        ## finding area name
+        if profname in areas_dict:
+            areas = areas_dict[profname]
+        elif profname2 in areas_dict:
+            areas = areas_dict[profname2]
+        else: # different ways to name the author :(
+            areas = areas_dict[author_synonyms[profname]]
 
         if option_anonymize:
             if not profname in publicNames:
@@ -163,7 +178,7 @@ def main():
         if profname in cnpq_pq_dict:
             pqlevel = cnpq_pq_dict[profname]
 
-        print("{0:.2f}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}".format(float(score), pqlevel, profname, numA, numB, numC, instName, numConference, numJournal))
+        print("{0:.2f}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}".format(float(score), pqlevel, profname, numA, numB, numC, instName, areas, numConference, numJournal))
 
 def processVenues(venues, rankNum, isJournal):
     for venue in venues:
