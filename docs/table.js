@@ -37,15 +37,15 @@ $(document).ready(function() {
             'data': 'name',
             'checkboxes': {
                'selectRow': true,
-               'selectCallback': function(nodes, selected){
+               /*'selectCallback': function(nodes, selected){
                   // If "Show all" is not selected
                   if($('#ctrl-show-selected').val() !== 'all'){
                      // Redraw table to include/exclude selected row
                      table.draw(false);                  
                   }            
-               }
-            }
-         },
+               }*/
+            	}
+         	},
             {
                 'className':      'details-control',
                 'orderable':      false,
@@ -109,41 +109,53 @@ $(document).ready(function() {
             }
         });
     });
-    
-    
-    $('#example tbody').on( 'click', 'input.dt-checkboxes', function () {
-    	var tr = $(this).closest('tr');
-    if ($(tr).hasClass('check-selected')) {
-        $(tr).removeClass('check-selected');
-    } else {
-        $(tr).addClass('check-selected');
-    }
+       
+   $('#example thead').on('click', 'input:checkbox', function () {
+		if($(this).is(':checked')){    		
+    		$(this).prop('checked', true);
+    		$('input.dt-checkboxes').each(function () {
+    			$(this).prop('checked', true);
+         	var tr = $(this).closest('tr');
+         	$(tr).addClass('check-selected');
+		 	});         
+		} else {
+			$(this).prop('checked', false);
+    		$('input.dt-checkboxes').each(function () {
+    			$(this).prop('checked', false);
+         	var tr = $(this).closest('tr');
+         	$(tr).removeClass('check-selected');
+		 	});             		
+    	}
 	});
 	
-    // Handle change event for "Show selected records" control
-   $('#ctrl-show-selected').on('change', function(){
-      var val = $(this).val();
-
-      // If all records should be displayed
-      if(val === 'all'){
-			$('input.dt-checkboxes').each(function () {
-         	$(this).click(); 
-			});         
-         $.fn.dataTable.ext.search.pop();
-         table.draw();
-      }
-      
-      // If selected records should be displayed
-      if(val === 'selected'){
-         $.fn.dataTable.ext.search.pop();
-         $.fn.dataTable.ext.search.push(
-            function (settings, data, dataIndex){
+	$('#example tbody').on( 'click', 'input.dt-checkboxes', function () {
+    	var tr = $(this).closest('tr');
+   	if ($(tr).hasClass('check-selected')) {
+        $(tr).removeClass('check-selected');
+    	} else {
+        $(tr).addClass('check-selected');
+    	}
+	});	
+	
+	// Handle click on "Show All" button
+    $('#btn-show-all').on('click', function(){
+       $('input.dt-checkboxes').each(function () {
+         	$(this).prop('checked', false);
+         	var tr = $(this).closest('tr');
+         	$(tr).removeClass('check-selected');
+		 });
+		 $('#example thead input:checkbox').prop('checked', false);  
+       $.fn.dataTable.ext.search.pop();
+       table.draw();
+    });	
+    
+    // Handle click on "Show selected" button
+	$('#btn-show-selected').on('click', function(){
+       $.fn.dataTable.ext.search.pop();
+       $.fn.dataTable.ext.search.push(function(settings, data, dataIndex){
                return ($(table.row(dataIndex).node()).hasClass('check-selected')) ? true : false;
-            }
-         );
-          
-         table.draw();
-      }
-   });
+       });
+       table.draw();
+    });
    
 });
