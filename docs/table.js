@@ -30,10 +30,22 @@ function format ( d ) {
 
 $(document).ready(function() {
     var table = $('#example').DataTable({
-        //'ajax': 'https://api.myjson.com/bins/16lp6',
-        //'ajax': 'fakeauthorlist.json',
-        'ajax': 'data.json',
-        'columns': [
+        'ajax': 'data.json', 
+        'columns': [                
+				{
+            'targets': 0,
+            'data': 'name',
+            'checkboxes': {
+               'selectRow': true,
+               'selectCallback': function(nodes, selected){
+                  // If "Show all" is not selected
+                  if($('#ctrl-show-selected').val() !== 'all'){
+                     // Redraw table to include/exclude selected row
+                     table.draw(false);                  
+                  }            
+               }
+            }
+         },
             {
                 'className':      'details-control',
                 'orderable':      false,
@@ -51,14 +63,15 @@ $(document).ready(function() {
             { 'data': 'num-csindexbr-journals' },
             { 'data': 'num-csindexbr-confs' }
         ],
-        'order': [[5, 'desc']],
+        'select': 'multi',
+        'order': [[6, 'desc']],
         'pageLength': 20
-    } );
-
+    });	
+	
     // Add event listener for opening and closing details
     $('#example tbody').on('click', 'td.details-control', function(){
         var tr = $(this).closest('tr');
-        var row = table.row( tr );
+        var row = table.row(tr);
 
         if(row.child.isShown()){
             // This row is already open - close it
@@ -70,7 +83,7 @@ $(document).ready(function() {
             tr.addClass('shown');
         }
     });
-
+    
     // Handle click on "Expand All" button
     $('#btn-show-all-children').on('click', function(){
         // Enumerate all rows
@@ -96,4 +109,41 @@ $(document).ready(function() {
             }
         });
     });
+    
+    
+    $('#example tbody').on( 'click', 'input.dt-checkboxes', function () {
+    	var tr = $(this).closest('tr');
+    if ($(tr).hasClass('check-selected')) {
+        $(tr).removeClass('check-selected');
+    } else {
+        $(tr).addClass('check-selected');
+    }
+	});
+	
+    // Handle change event for "Show selected records" control
+   $('#ctrl-show-selected').on('change', function(){
+      var val = $(this).val();
+
+      // If all records should be displayed
+      if(val === 'all'){
+			$('input.dt-checkboxes').each(function () {
+         	$(this).click(); 
+			});         
+         $.fn.dataTable.ext.search.pop();
+         table.draw();
+      }
+      
+      // If selected records should be displayed
+      if(val === 'selected'){
+         $.fn.dataTable.ext.search.pop();
+         $.fn.dataTable.ext.search.push(
+            function (settings, data, dataIndex){
+               return ($(table.row(dataIndex).node()).hasClass('check-selected')) ? true : false;
+            }
+         );
+          
+         table.draw();
+      }
+   });
+   
 });
