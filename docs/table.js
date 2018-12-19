@@ -52,7 +52,7 @@ $(document).ready(function() {
             { 'data': 'num-csindexbr-confs' }
         ],
         'order': [[5, 'desc']],
-        'pageLength': 20
+        'pageLength': 25
     } );
 
     // Add event listener for opening and closing details
