@@ -35,6 +35,7 @@ $(document).ready(function() {
 				{
             'targets': 0,
             'defaultContent': '',
+            'orderable':      false,
             'className': 'select-checkbox',
          	},
             {
@@ -102,6 +103,16 @@ $(document).ready(function() {
             }
         });
     });
+
+	$('#example').on('click', '#select_all', function() {
+    if ($('#select_all:checked').val() === 'on') {
+      table.rows().select();
+    }
+    else {
+      table.rows().deselect();
+    }
+      
+  });
    
    $('#btn-show-all').on('click', function(){
    	$.fn.dataTable.ext.search.pop();
