@@ -37,14 +37,7 @@ $(document).ready(function() {
             'data': 'name',
             'checkboxes': {
                'selectRow': true,
-               /*'selectCallback': function(nodes, selected){
-                  // If "Show all" is not selected
-                  if($('#ctrl-show-selected').val() !== 'all'){
-                     // Redraw table to include/exclude selected row
-                     table.draw(false);                  
-                  }            
-               }*/
-            	}
+             }
          	},
             {
                 'className':      'details-control',
@@ -63,7 +56,9 @@ $(document).ready(function() {
             { 'data': 'num-csindexbr-journals' },
             { 'data': 'num-csindexbr-confs' }
         ],
-        'select': 'multi',
+        'select': {
+         'style': 'multi'
+      	},
         'order': [[6, 'desc']],
         'pageLength': 20
     });	
@@ -109,53 +104,18 @@ $(document).ready(function() {
             }
         });
     });
-       
-   $('#example thead').on('click', 'input:checkbox', function () {
-		if($(this).is(':checked')){    		
-    		$(this).prop('checked', true);
-    		$('input.dt-checkboxes').each(function () {
-    			$(this).prop('checked', true);
-         	var tr = $(this).closest('tr');
-         	$(tr).addClass('check-selected');
-		 	});         
-		} else {
-			$(this).prop('checked', false);
-    		$('input.dt-checkboxes').each(function () {
-    			$(this).prop('checked', false);
-         	var tr = $(this).closest('tr');
-         	$(tr).removeClass('check-selected');
-		 	});             		
-    	}
-	});
-	
-	$('#example tbody').on( 'click', 'input.dt-checkboxes', function () {
-    	var tr = $(this).closest('tr');
-   	if ($(tr).hasClass('check-selected')) {
-        $(tr).removeClass('check-selected');
-    	} else {
-        $(tr).addClass('check-selected');
-    	}
-	});	
-	
-	// Handle click on "Show All" button
-    $('#btn-show-all').on('click', function(){
-       $('input.dt-checkboxes').each(function () {
-         	$(this).prop('checked', false);
-         	var tr = $(this).closest('tr');
-         	$(tr).removeClass('check-selected');
-		 });
-		 $('#example thead input:checkbox').prop('checked', false);  
-       $.fn.dataTable.ext.search.pop();
-       table.draw();
-    });	
-    
-    // Handle click on "Show selected" button
-	$('#btn-show-selected').on('click', function(){
-       $.fn.dataTable.ext.search.pop();
-       $.fn.dataTable.ext.search.push(function(settings, data, dataIndex){
-               return ($(table.row(dataIndex).node()).hasClass('check-selected')) ? true : false;
-       });
-       table.draw();
-    });
    
+   $('#btn-show-all').on('click', function(){
+   	$.fn.dataTable.ext.search.pop();
+   	table.search('').draw();
+   });    
+	       
+   $('#btn-show-selected').on('click', function(){
+   	$.fn.dataTable.ext.search.pop();
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex){             
+      	return ($(table.row(dataIndex).node()).hasClass('selected')) ? true : false;
+      });
+      table.draw();	
+   });
+   	    
 });
