@@ -60,9 +60,8 @@ $(document).ready(function() {
          'style': 'multi'
       	},
         'order': [[6, 'desc']],
-        'pageLength': 20
+        'pageLength': 25
     });	
-	
     // Add event listener for opening and closing details
     $('#example tbody').on('click', 'td.details-control', function(){
         var tr = $(this).closest('tr');
