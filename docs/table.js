@@ -34,10 +34,8 @@ $(document).ready(function() {
         'columns': [                
 				{
             'targets': 0,
-            'data': 'name',
-            'checkboxes': {
-               'selectRow': true,
-             }
+            'defaultContent': '',
+            'className': 'select-checkbox',
          	},
             {
                 'className':      'details-control',
@@ -57,8 +55,9 @@ $(document).ready(function() {
             { 'data': 'num-csindexbr-confs' }
         ],
         'select': {
-         'style': 'multi'
-      	},
+            'style':    'multi',
+            'selector': 'td:first-child'
+        },
         'order': [[6, 'desc']],
         'pageLength': 25
     });	
@@ -114,7 +113,7 @@ $(document).ready(function() {
       $.fn.dataTable.ext.search.push(function (settings, data, dataIndex){             
       	return ($(table.row(dataIndex).node()).hasClass('selected')) ? true : false;
       });
-      table.draw();	
+      table.search('').draw();
    });
    	    
 });
