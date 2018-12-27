@@ -174,7 +174,7 @@ def main():
             if not profname in publicNames:
                 profname = "anonymous"
 
-        pqlevel = "--"
+        pqlevel = "x"
         if profname in cnpq_pq_dict:
             pqlevel = cnpq_pq_dict[profname]
 

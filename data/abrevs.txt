@@ -125,3 +125,9 @@ J Opt Th Appl,J. of Optimization Theory and Applications (J Opt Th Appl)
 Opt Methods & Sw,Optimization Methods & Software (Opt Methods & Sw)
 Inf. Sciences,Information Sciences
 Transp. Science,Transportation Science
+IEEE Trans. Computers,IEEE Trans. on Computers
+IEEE TCAD,IEEE Trans. on CAD of Integr. Circuits (IEEE TCAD)
+IEEE TVLSI,IEEE Trans. on VLSI Systems
+ACM TODAES,ACM Trans. Design Autom. Electr. Syst. (TODES)
+IEEE TCAS,IEEE Trans. on Circuits and Systems (TCAS)
+JETCAS,IEEE J. Emerg. Sel. Topics Circuits Syst. (JETCAS)
