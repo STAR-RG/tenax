@@ -30,10 +30,14 @@ function format ( d ) {
 
 $(document).ready(function() {
     var table = $('#example').DataTable({
-        //'ajax': 'https://api.myjson.com/bins/16lp6',
-        //'ajax': 'fakeauthorlist.json',
-        'ajax': 'data.json',
-        'columns': [
+        'ajax': 'data.json', 
+        'columns': [                
+				{
+            'targets': 0,
+            'defaultContent': '',
+            'orderable':      false,
+            'className': 'select-checkbox',
+         	},
             {
                 'className':      'details-control',
                 'orderable':      false,
@@ -51,14 +55,17 @@ $(document).ready(function() {
             { 'data': 'num-csindexbr-journals' },
             { 'data': 'num-csindexbr-confs' }
         ],
-        'order': [[5, 'desc']],
+        'select': {
+            'style':    'multi',
+            'selector': 'td:first-child'
+        },
+        'order': [[6, 'desc']],
         'pageLength': 25
-    } );
-
+    });	
     // Add event listener for opening and closing details
     $('#example tbody').on('click', 'td.details-control', function(){
         var tr = $(this).closest('tr');
-        var row = table.row( tr );
+        var row = table.row(tr);
 
         if(row.child.isShown()){
             // This row is already open - close it
@@ -70,7 +77,7 @@ $(document).ready(function() {
             tr.addClass('shown');
         }
     });
-
+    
     // Handle click on "Expand All" button
     $('#btn-show-all-children').on('click', function(){
         // Enumerate all rows
@@ -96,4 +103,28 @@ $(document).ready(function() {
             }
         });
     });
+
+	$('#example').on('click', '#select_all', function() {
+    if ($('#select_all:checked').val() === 'on') {
+      table.rows().select();
+    }
+    else {
+      table.rows().deselect();
+    }
+      
+  });
+   
+   $('#btn-show-all').on('click', function(){
+   	$.fn.dataTable.ext.search.pop();
+   	table.search('').draw();
+   });    
+	       
+   $('#btn-show-selected').on('click', function(){
+   	$.fn.dataTable.ext.search.pop();
+      $.fn.dataTable.ext.search.push(function (settings, data, dataIndex){             
+      	return ($(table.row(dataIndex).node()).hasClass('selected')) ? true : false;
+      });
+      table.search('').draw();
+   });
+   	    
 });
